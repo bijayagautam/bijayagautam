@@ -2,6 +2,8 @@ const express = require("express");
 const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 
+//Loading environment variable from the file here
+require('dotenv').config({path:"./config/keys.env"});
 
 const app = express();
 
@@ -24,7 +26,7 @@ app.use("/",generalController); //checks route in general controller and moves t
 app.use("/project",projectController);
 
 //Creating Web Server here
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     console.log(`Web server is up and running at ${PORT}!`)
 })
