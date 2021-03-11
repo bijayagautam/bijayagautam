@@ -11,7 +11,7 @@
 
 
 # SELF NOTE
-git status
-git add .
-git commit -m "note here"
-git push -u origin master
+1. git status
+2. git add .
+3. git commit -m "note here"
+4. git push -u origin master
