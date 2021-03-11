@@ -15,45 +15,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-//Routing
-//Home Route
-app.get("/",(req,res)=>{
+//Loading controllers here
+const generalController = require("./controllers/general");
+const projectController = require("./controllers/project");
 
-    res.render("general/home");
-});
+//Mapping each Controller to app object here
+app.use("/",generalController); //checks route in general controller and moves to next controller for route check
+app.use("/project",projectController);
 
-// Contact Route
-app.get("/contact",(req,res)=>{
-
-    res.render("general/contact");
-});
-
-// Contact Form Submit
-app.post("/contact",(req,res)=>{
-
-    res.render();
-});
-
-// Project List Route
-app.get("/project/list",(req,res)=>{
-
-    res.render("projects/projectList");
-});
-
-// Project Add Route
-app.get("/project/add",(req,res)=>{
-
-    res.render("projects/projectList");
-});
-
-// Add project Form Submit
-app.post("/project/add",(req,res)=>{
-
-    res.render();
-});
-
-
-//Creating Web Server
+//Creating Web Server here
 const PORT = 3000;
 app.listen(PORT,()=>{
     console.log(`Web server is up and running at ${PORT}!`)
