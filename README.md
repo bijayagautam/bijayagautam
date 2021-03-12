@@ -3,6 +3,7 @@
 2. npm init -y
 3. npm i express express-handlebars
 4. npm i dotenv
+5. npm i mongoose
 
 
 # HOW TO RUN THE WEBSITE

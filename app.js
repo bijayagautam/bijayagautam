@@ -25,6 +25,15 @@ const projectController = require("./controllers/project");
 app.use("/",generalController); //checks route in general controller and moves to next controller for route check
 app.use("/project",projectController);
 
+//Connecting to Database
+mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(()=>{
+    console.log(`Database Connection Successful!`);
+})
+.catch(err=>
+    console.log(`Error Occured while connecting to database, Please contact your database administrator! ${err}!`)
+);
+
 //Creating Web Server here
 const PORT = process.env.PORT;
 app.listen(PORT,()=>{
