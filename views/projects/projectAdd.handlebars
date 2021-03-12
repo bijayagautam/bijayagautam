@@ -1,1 +1,27 @@
-<h1>Add Project Form</h1>
+<h1>Portfolio Management</h1>
+
+<div class="crud-form">
+    <article class="form">
+        <form method="POST" action="/project/add" enctype="multipart/form-data" class="admin-entry-form">
+            <div id="createProjectForm">
+                <ul class="form-box" >
+                    <li><label for="title"></label>Project Title</li>
+                    <li><input type="text" name="projectTitle" value="{{data.projectTitle}}"></li><br>
+                    
+                    <li><label for="description"></label>Project Description</li>
+                    <li><input type="text" name="projectDescription" value="{{data.projectDescription}}"></li><br>
+                   
+                    <p>Upload Project Image:</p>
+                    <input type="file" id="myFile" name="projectImage" value="image">
+                </ul>
+                <div>
+                    <input type="submit" value="Add Project" class="form-button">
+                </div>
+            </div>  
+        </form>
+        <div>
+            <a href="/project/manage" class="panel-operation">Manage Project</a>
+        </div>
+    </article> 
+</div>
+

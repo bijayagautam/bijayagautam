@@ -4,6 +4,7 @@
 3. npm i express express-handlebars
 4. npm i dotenv
 5. npm i mongoose
+6. npm i express-fileupload
 
 
 # HOW TO RUN THE WEBSITE

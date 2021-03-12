@@ -1,6 +1,9 @@
 const express = require("express");
 const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
+
 
 //Loading environment variable from the file here
 require('dotenv').config({path:"./config/keys.env"});
@@ -16,6 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //Handlebars middleware : Telling Express to set or register Handlebars as its' Template/View Engine : Must Be After the app object
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+//Allowing Fileupload here
+app.use(fileUpload()); //Must be before routes
 
 //Loading controllers here
 const generalController = require("./controllers/general");
