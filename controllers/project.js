@@ -62,11 +62,29 @@ router.post("/add",(req,res)=>
 //Project Manage Route
 router.get("/manage",(req,res)=>{
 
-    res.render("projects/projectDashboard",{
-        title: "Project Manage Page",
-        description: "Welcome to project dashboard page."
-    })
+    projectModel.find()
+    .then((projects)=>{
 
+        const filteredProject =   projects.map(project=>{
+            return {
+                id: project._id,
+                projectTitle : project.projectTitle,
+                projectCategory : project.projectCategory,
+                projectType : project.projectType,
+                projectToolsAndTechnology : project.projectToolsAndTechnology,
+                projectDescription : project.projectDescription,
+                projectImage : project.projectImage
+            }
+        });
+
+        res.render("projects/projectDashboard",{
+            title: "Project Manage Page",
+            description: "Welcome to project dashboard page.",
+            data : filteredProject
+        })
+
+    })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
 });
 
 
