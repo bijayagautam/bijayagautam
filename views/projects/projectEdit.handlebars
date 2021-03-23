@@ -1,11 +1,11 @@
 <div class="crud-form">
     <article class="form">
-        <form method="POST" action="/project/add" enctype="multipart/form-data" class="admin-entry-form">
+        <form method="POST" action="/project/update/{{_id}}?method=PUT" enctype="multipart/form-data" class="admin-entry-form">
             <div id="createProjectForm">
-                <p>Project Detail Form</p>
+                <p>Project Edit Form</p>
                 <div class="form-box" >
                     <label for="title">Title</label>
-                    <input type="text" name="projectTitle" value="{{data.projectTitle}}"></li><br>
+                    <input type="text" name="projectTitle" value="{{projectTitle}}"></li><br>
                     
                     <label for="category">Category</label>
                     <select name="projectCategory" class="form-dropdown">
@@ -23,20 +23,20 @@
                         <option value="" selected>Please Select Project Type</option>
                         <option value="School Project">School Project</option>
                         <option value="Professional Project">Professional Project</option>
-                        <option value="Self Directed">Self Directed</option>
+                        <option value="Self Directed Project">Self Directed</option>
                     </select><br>
                     
                     <label for="toolsAndTechnology">Tools and Technology Used</label>
-                    <input type="text" name="projectToolsAndTechnology" value="{{data.projectToolsAndTechnology}}"></li><br>
+                    <input type="text" name="projectToolsAndTechnology" value="{{projectToolsAndTechnology}}"></li><br>
                     
                     <label for="description">Project Description</label>
-                    <input type="text" name="projectDescription" value="{{data.projectDescription}}"></li><br>
+                    <input type="text" name="projectDescription" value="{{projectDescription}}"></li><br>
                    
                     <label for="uploadImage">Upload Image</label>
-                    <input type="file" id="myFile" name="projectImage" value="image">
+                    <input type="file" id="myFile" name="projectImage" value="{{projectImage}}">
                 </div>
                 <div>
-                    <input type="submit" value="Add Project" class="form-button">
+                    <input type="submit" value="Update Project" class="form-button">
                 </div>
             </div>  
         </form>
@@ -45,4 +45,3 @@
         </div>
     </article> 
 </div>
-

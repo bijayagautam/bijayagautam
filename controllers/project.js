@@ -87,5 +87,60 @@ router.get("/manage",(req,res)=>{
     .catch(err=>console.log(`Error occured while pulling data :${err}`));
 });
 
+//Project Edit Route
+router.get("/edit/:id",(req,res)=>{
+
+    projectModel.findById(req.params.id)
+    .then((project)=>{
+
+        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage} = project;
+        res.render("projects/projectEdit",{
+            title: "Project Edit Page",
+            description: "Welcome to project edit page.",
+            _id,
+            projectTitle,
+            projectCategory,
+            projectType,
+            projectToolsAndTechnology,
+            projectDescription,
+            projectImage
+        })
+
+    })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
+})
+
+//Project Update Route
+router.put("/update/:id",(req,res)=>{
+
+    const project = {
+        projectTitle : req.body.projectTitle,
+        projectCategory : req.body.projectCategory,
+        projectType : req.body.projectType,
+        projectToolsAndTechnology : req.body.projectToolsAndTechnology,
+        projectDescription : req.body.projectDescription,
+        projectImage : req.body.projectImage
+    }
+
+    projectModel.updateOne({_id:req.params.id},project)
+    .then(()=>{
+        res.redirect("/project/manage");
+    })
+    .catch(err=>console.log(`Error occured while updating data :${err}`));
+
+
+});
+
+//Project Delete Route
+router.delete("/delete/:id",(req,res)=>{
+    
+    projectModel.deleteOne({_id:req.params.id})
+    .then(()=>{
+        res.redirect("/project/manage");
+    })
+    .catch(err=>console.log(`Error occured while deleting data :${err}`));
+
+});
+
 
 module.exports = router;

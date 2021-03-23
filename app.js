@@ -20,6 +20,21 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+//Custom middleware - Allowing specific links that are submitted to send PUT and DELETE request respectively
+app.use((req,res,next)=>{
+
+    if(req.query.method=="PUT")
+    {
+        req.method="PUT"
+    }
+
+    else if(req.query.method=="DELETE")
+    {
+        req.method="DELETE"
+    }
+    next(); //very important to move to next route
+})
+
 //Allowing Fileupload here
 app.use(fileUpload()); //Must be before routes
 
