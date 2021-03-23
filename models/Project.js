@@ -8,6 +8,21 @@ const projectSchema = new Schema({
         type:String,
         required:true
     },
+    projectCategory:
+    {
+        type:String,
+        required:true
+    },
+    projectType:
+    {
+        type:String,
+        required:true
+    },
+    projectToolsAndTechnology:
+    {
+        type:String,
+        required:true
+    },
     projectDescription:
     {
         type:String,

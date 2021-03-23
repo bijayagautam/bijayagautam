@@ -30,6 +30,9 @@ router.post("/add",(req,res)=>
 {
     const newProject = {
         projectTitle : req.body.projectTitle,
+        projectCategory : req.body.projectCategory,
+        projectType : req.body.projectType,
+        projectToolsAndTechnology : req.body.projectToolsAndTechnology,
         projectDescription : req.body.projectDescription,
         projectImage : req.body.projectImage
     }

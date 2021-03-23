@@ -7,6 +7,9 @@
                 <thead>
                     <tr>
                         <th>Project Title</th>
+                        <th>Project Category</th>
+                        <th>Project Type</th>
+                        <th>Project Tools And Technology</th>
                         <th>Project Description</th>
                         <th>Project Image</th>
                         <th colspan="2">Operation</th>
@@ -16,6 +19,9 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.projectTitle}}</td>
+                        <td>{{this.projectCategory}}</td>
+                        <td>{{this.projectType}}</td>
+                        <td>{{this.projectToolsAndTechnology}}</td>
                         <td>{{this.projectDescription}}</td>
                         <td>{{this.projectImage}}</td>
                         <td><a href="/project/edit/{{this.id}}" class="form-button">Update</a></td>
@@ -23,7 +29,7 @@
                     </tr>
 
                     {{else}}
-                    <td colspan="5">
+                    <td colspan="8">
                         <p>No Records in Database</p>
                     </td>
                     {{/each}}
