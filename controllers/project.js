@@ -50,7 +50,7 @@ router.post("/add",(req,res)=>
                 projectImage: req.files.projectImage.name
             })
             .then(()=>{
-                res.redirect("/project/manage")
+                res.redirect("/project/dashboard")
             })
             
         })
@@ -59,8 +59,8 @@ router.post("/add",(req,res)=>
     .catch(err=>console.log(`Error occured while inserting data:${err}`));
 });
 
-//Project Manage Route
-router.get("/manage",(req,res)=>{
+//Project Dashboard Route
+router.get("/dashboard",(req,res)=>{
 
     projectModel.find()
     .then((projects)=>{
@@ -78,7 +78,7 @@ router.get("/manage",(req,res)=>{
         });
 
         res.render("projects/projectDashboard",{
-            title: "Project Manage Page",
+            title: "Project Dashboard Page",
             description: "Welcome to project dashboard page.",
             data : filteredProject
         })
@@ -124,7 +124,7 @@ router.put("/update/:id",(req,res)=>{
 
     projectModel.updateOne({_id:req.params.id},project)
     .then(()=>{
-        res.redirect("/project/manage");
+        res.redirect("/project/dashboard");
     })
     .catch(err=>console.log(`Error occured while updating data :${err}`));
 
@@ -136,7 +136,7 @@ router.delete("/delete/:id",(req,res)=>{
     
     projectModel.deleteOne({_id:req.params.id})
     .then(()=>{
-        res.redirect("/project/manage");
+        res.redirect("/project/dashboard");
     })
     .catch(err=>console.log(`Error occured while deleting data :${err}`));
 

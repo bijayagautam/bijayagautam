@@ -5,6 +5,7 @@
 4. npm i dotenv
 5. npm i mongoose
 6. npm i express-fileupload
+7. npm i bcryptjs
 
 
 # HOW TO RUN THE WEBSITE

@@ -41,10 +41,12 @@ app.use(fileUpload()); //Must be before routes
 //Loading controllers here
 const generalController = require("./controllers/general");
 const projectController = require("./controllers/project");
+const userController = require("./controllers/user");
 
 //Mapping each Controller to app object here
 app.use("/",generalController); //checks route in general controller and moves to next controller for route check
 app.use("/project",projectController);
+app.use("/user",userController);
 
 //Connecting to Database
 mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
