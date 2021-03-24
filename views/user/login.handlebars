@@ -1,11 +1,5 @@
 <section class="form">
     <form method="POST" action="/user/login" class="user-entry-form">
-        <div class="form-info">
-            <p>Login with <a href="#" class="other-link">Facebook</a> or <a href="#" class="other-link">Google</a> or</p>
-            <hr>
-            <p>login here</p>
-        </div>
-       
         <div class="form-box">
             <label for="email"></label>
             <input type="email" name="emailAddress" placeholder="Email address" value="{{data.emailAddress}}"><br>
@@ -28,7 +22,7 @@
             {{#each errors}}
                 <div class="error-message"> {{this}} </div>
             {{/each}}
-            <a href="#" class="other-link">Forgot Password?</a>
+            <p>Authorization Required to Proceed</p>
         </div>
         <hr>
 

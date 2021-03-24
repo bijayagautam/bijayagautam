@@ -3,8 +3,7 @@ const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
-
-
+const session = require('express-session')
 //Loading environment variable from the file here
 require('dotenv').config({path:"./config/keys.env"});
 
@@ -37,6 +36,20 @@ app.use((req,res,next)=>{
 
 //Allowing Fileupload here
 app.use(fileUpload()); //Must be before routes
+
+//Session Midleware
+app.use(session({
+    secret: `${process.env.SESSION_TOKEN}`,
+    resave: false,
+    saveUninitialized: true
+}))
+
+//Custom -  Middleware functions
+app.use((req,res,next)=>{
+    //res.locals.user is a global handlebars variable which can be access in every single handlebars file 
+    res.locals.user = req.session.userInfo;
+    next();
+});
 
 //Loading controllers here
 const generalController = require("./controllers/general");

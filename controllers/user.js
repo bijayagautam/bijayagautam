@@ -60,6 +60,8 @@ router.post("/login",(req,res)=>
 
                     if(isMatched)
                     {
+                        //session created here
+                        req.session.userInfo = user;
                         res.redirect("/project/dashboard")
                     }
                     else
@@ -75,6 +77,13 @@ router.post("/login",(req,res)=>
         })
         .catch(err=>console.log(`Error ${err}`));
     }
+});
+
+router.get("/logout",(req,res)=>{
+
+    req.session.destroy();
+    res.redirect("/user/login")
+
 });
 
 

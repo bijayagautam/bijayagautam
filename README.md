@@ -6,6 +6,7 @@
 5. npm i mongoose
 6. npm i express-fileupload
 7. npm i bcryptjs
+8. npm i express-session
 
 
 # HOW TO RUN THE WEBSITE
