@@ -1,5 +1,5 @@
 # CREATING NODE.JS EXPRESS HANDLEBARS APPLICATION STEPS
-1. Craete Entry Point app.js
+1. Create Entry Point app.js
 2. npm init -y
 3. npm i express express-handlebars
 4. npm i dotenv
