@@ -3,6 +3,7 @@ const router = express.Router();
 //Importing models data
 const projectModel = require("../models/Project");
 const path = require("path");
+const isAuthenticated = require("../middleware/auth");
 
 //Setting up routes
 //Portfolio View Route
@@ -16,7 +17,7 @@ router.get("/list",(req,res)=>{
 });
 
 //Project Add Route
-router.get("/add",(req,res)=>{
+router.get("/add",isAuthenticated,(req,res)=>{
 
     res.render("projects/projectAdd",{
         title: "Project Add Page",
@@ -26,7 +27,7 @@ router.get("/add",(req,res)=>{
 });
 
 //When admin submit the add project form
-router.post("/add",(req,res)=>
+router.post("/add",isAuthenticated,(req,res)=>
 {
     const newProject = {
         projectTitle : req.body.projectTitle,
@@ -60,7 +61,7 @@ router.post("/add",(req,res)=>
 });
 
 //Project Dashboard Route
-router.get("/dashboard",(req,res)=>{
+router.get("/dashboard",isAuthenticated,(req,res)=>{
 
     projectModel.find()
     .then((projects)=>{
@@ -88,7 +89,7 @@ router.get("/dashboard",(req,res)=>{
 });
 
 //Project Edit Route
-router.get("/edit/:id",(req,res)=>{
+router.get("/edit/:id",isAuthenticated,(req,res)=>{
 
     projectModel.findById(req.params.id)
     .then((project)=>{
@@ -111,7 +112,7 @@ router.get("/edit/:id",(req,res)=>{
 })
 
 //Project Update Route
-router.put("/update/:id",(req,res)=>{
+router.put("/update/:id",isAuthenticated,(req,res)=>{
 
     const project = {
         projectTitle : req.body.projectTitle,
@@ -132,7 +133,7 @@ router.put("/update/:id",(req,res)=>{
 });
 
 //Project Delete Route
-router.delete("/delete/:id",(req,res)=>{
+router.delete("/delete/:id",isAuthenticated,(req,res)=>{
     
     projectModel.deleteOne({_id:req.params.id})
     .then(()=>{
