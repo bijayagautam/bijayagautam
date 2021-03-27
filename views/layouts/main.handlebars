@@ -9,25 +9,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <base href="/">
     <link rel="stylesheet" href="css/style.css?v=1.0">
+    <script src="https://kit.fontawesome.com/9e54110656.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     {{!-- Menu system --}}
-    <header>
-        <menu>
-            <a href="/">HOME</a>
-            <a href="project/list">VIEW PORTFOLIO</a>
-            <a href="contact">CONTACT</a>
-            <a href="user/login">MANAGE PORTFOLIO</a>
-        </menu>
+    <header class="main-header">
+        <nav class="navbar">
+            {{!-- Logo --}}
+            <div class="logo-container" >
+                <a href="/"><img src="/img/BijayaGautam_Elephant Grey_Logo_Graphics.svg" alt="bijaya gautam brand logo" class="logo"></a>
+            </div>
+        
+            {{!-- Hamburger menu --}}
+            <div class="ham-menu">
+                <a href="#" id="hamMenu"><i class="fas fa-bars"></i></a>
+                {{!-- <a href="#" id="closeMenu"><i class="fas fa-times"></i></a> --}}
+            </div>
+
+            {{!-- Main Menu --}}    
+            <menu class="main-menu">
+                <a href="/">HOME</a>
+                <a href="project/list">VIEW PORTFOLIO</a>
+                <a href="contact">CONTACT</a>
+                <a href="user/login">MANAGE PORTFOLIO</a>
+            </menu>
+        </nav>   
     </header>
 
-    <main>
+    <main class="main-content">
        {{{body}}}
     </main>
 
     {{!-- Main Footer --}}
-    <footer>
-
+    <footer class="main-footer">
+        <div class="copyright-info">
+            <p>&copy; Copyright, 2021 Bijaya Gautam, All rights reserved.</p>
+        </div>
     </footer>
     <script src="js/index.js"></script>
 </body>

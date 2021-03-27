@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --portfolio-theme: #007ca5;
+    --portfolio-theme-accent: #a32d22;
+    --portfolio-theme-fg: #ffffff;
+
+    --portfolio-text-accent-one: #0e1111;
+    --portfolio-text-accent-two: #787a76;
+    --portfolio-text-accent-three: #615551;
+    
+    --portfolio-main-font: 'Rajdhani', sans-serif;
+}
+
+/* General style starts */
+body,h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+/* General style ends */
+
+/* Style for header starts */
+.main-header {
+    background-color: var(--portfolio-theme-fg);
+    color: var(--portfolio-text-accent-two);
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: auto  3em;
+    grid-template-areas:  "logo  hamMenuBar"
+                          "menu menu";
+}
+
+.logo-container{
+    background-color: var(--portfolio-theme-fg);
+}
+
+.logo {
+    grid-area: logo;
+    height : 7em;
+}
+
+.ham-menu {
+    grid-area: hamMenuBar;
+    text-align: center;
+    padding: 3em 0;
+}
+
+.main-menu{
+    grid-area: menu;
+}
+
+.main-menu a {
+    color: var(--portfolio-text-accent-three);
+    font-family: var(--portfolio-main-font);
+    font-size: 1.2em;
+    font-weight: normal;
+    display: block;
+    line-height: 2;
+    text-align: center;
+    font-weight: 600;
+}
+
+.main-menu a:hover {
+    color: var(--portfolio-theme-accent);
+    font-weight: bold;
+}
+/* Style for header ends */
+
+
+/* Style for main content starts */
+.main-content{
+    font-family: var(--portfolio-main-font);
+    margin: 1em 2em;
+}
+/* Style for main content ends */
+
+
+/* Style for footer starts */
+.main-footer{
+    background-color: var(--portfolio-text-accent-three);
+    color: var(--portfolio-theme-fg);
+    font-family: var(--portfolio-main-font);
+    text-align: center;
+    font-weight: 600;
+}
+
+.copyright-info p{
+    padding: 1em 0;
+}
+/* Style for footer ends */
+
+/* Media Query Starts Here--- */
+@media screen and (min-width: 50em) {
+   
+}
+
+@media screen and (min-width: 65em) {
+    .navbar {
+        grid-template-columns: 15em  auto;
+        grid-template-areas:  "logo menu";  
+        padding-left: 5em;
+    }
+
+    .main-menu {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 4em;
+        margin-top: 5em;
+    }
+
+    .ham-menu {
+        display: none;
+    }
+    
+    .logo {
+        grid-area: logo;
+        height : 12em;
+    }
+
+    
+}
