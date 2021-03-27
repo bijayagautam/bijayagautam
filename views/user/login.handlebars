@@ -1,13 +1,14 @@
+<h1 class="page-header">Enter Login Details</h1>
 <section class="form">
     <form method="POST" action="/user/login" class="user-entry-form">
         <div class="form-box">
-            <label for="email"></label>
-            <input type="email" name="emailAddress" placeholder="Email address" value="{{data.emailAddress}}"><br>
+            <label for="email">Email :</label>
+            <input type="email" name="emailAddress" placeholder="Enter your email address" value="{{data.emailAddress}}"><br>
             {{#if messages.emailAddress}}
                 <div class="error-message"> {{messages.emailAddress}} </div>
             {{/if}}
 
-            <label for="password"></label>
+            <label for="password">Password :</label>
             <input type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter your password" value="{{data.password}}"><br>       
             {{#if messages.password}}
                 <div class="error-message"> {{messages.password}} </div>
@@ -15,16 +16,17 @@
         </div>
 
         <div>
-            <input type="submit" value="Log in" class="form-button">
+            <input type="submit" value="LOGIN" class="form-button">
         </div>
 
         <div class="form-question">
             {{#each errors}}
                 <div class="error-message"> {{this}} </div>
             {{/each}}
-            <p>Authorization Required to Proceed</p>
+            <hr>
+            <p class="form-note">**Authorized login only !</p>
         </div>
-        <hr>
+       
 
     </form>
 </section>

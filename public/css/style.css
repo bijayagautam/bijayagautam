@@ -83,10 +83,70 @@ a{
 
 
 /* Style for main content starts */
+.page-header{
+    color: var(--portfolio-theme);
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.page-sub-header{
+    color: var(--portfolio-text-accent-three);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
 .main-content{
     font-family: var(--portfolio-main-font);
     margin: 1em 2em;
 }
+
+.user-entry-form{
+    margin: 0 auto;
+    max-width: 30em;
+    min-width: 20em;
+    padding: 1em;
+    box-shadow: 0em 0.1em 0.2em var(--portfolio-text-accent-three);
+    border-radius: 0.2em;
+}
+
+.form-box label{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.form-box input{
+    width: 90%;
+    padding: 0.8em;
+    border-radius: 0.2em;
+    border: 0.1em solid;
+    border-color: var(--portfolio-text-accent-three);
+    padding-left: 1.5em;
+    margin: 0.6em 0;
+}
+
+.form-button{
+    margin: 1em 0;
+    background-color: var(--portfolio-theme-accent);
+    color: var(--portfolio-theme-fg);
+    padding: 0.5em 0.8em;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.3em;
+}
+
+.error-message{
+    color: var(--portfolio-theme-accent);
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+
+.form-note{
+    color: var(--portfolio-theme-accent);
+    text-align: center;
+}
+
 /* Style for main content ends */
 
 
@@ -133,5 +193,12 @@ a{
         height : 12em;
     }
 
+    .page-header{
+        margin: 0 10em;
+    }
+
+    .page-sub-header{
+        margin: 0 14.7em;
+    }
     
 }
