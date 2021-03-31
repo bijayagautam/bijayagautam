@@ -147,6 +147,33 @@ a{
     text-align: center;
 }
 
+.form-dropdown{
+    width: 95%;
+    padding: 0.8em;
+    border-radius: 0.2em;
+    border: 0 solid;
+    padding-left: 1.5em;
+    margin: 0.5em;
+}
+
+.project-search-area{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0.5em 0;
+    align-items: center;
+}
+
+.project-search-area label{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.no-records{
+    text-align: center;
+    color: var(--portfolio-theme-accent);
+    margin: 5em 0;
+}
+
 /* Style for main content ends */
 
 
@@ -164,9 +191,47 @@ a{
 }
 /* Style for footer ends */
 
+
+.project-container{
+    width: 25em;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column{
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    padding: 0.5em;
+}
+
+.column img{
+    width: 100%;
+    vertical-align: middle;
+  }
+
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
-   
+    .project-container{
+        width: 50em;
+        margin: auto;
+    }
+
+    .column{
+        flex-basis: 33.33%;
+    }
+
+    .project-search-area{
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        margin: 1em;
+        align-items: center;
+        grid-gap: 1.5em;
+    }
 }
 
 @media screen and (min-width: 65em) {
@@ -194,11 +259,30 @@ a{
     }
 
     .page-header{
-        margin: 0 10em;
+        width: 25em;
+        margin: auto;
+        padding-bottom: 1em;
     }
 
     .page-sub-header{
         margin: 0 14.7em;
     }
     
+    .search-area{
+        width: 50em;
+        margin: auto;
+    }
+
+    .project-container{
+        width: 70em;
+        margin: auto;
+    }
+
+    .column{
+        flex-basis: 12.33%;
+    }
+
+    .column img:hover{
+        filter: sepia(100%);
+    }
 }

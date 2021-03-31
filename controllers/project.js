@@ -9,10 +9,30 @@ const isAuthenticated = require("../middleware/auth");
 //Portfolio View Route
 router.get("/list",(req,res)=>{
 
-    res.render("projects/projectList",{
-        title: "Portfolio Page",
-        description: "Welcome to portfolio page."
+    projectModel.find()
+    .then((projects)=>{
+
+        const filteredProject =   projects.map(project=>{
+            return {
+                id: project._id,
+                projectTitle : project.projectTitle,
+                projectCategory : project.projectCategory,
+                projectType : project.projectType,
+                projectToolsAndTechnology : project.projectToolsAndTechnology,
+                projectDescription : project.projectDescription,
+                projectImage : project.projectImage
+            }
+        });
+
+        res.render("projects/projectList",{
+            title: "Portfolio Page",
+            description: "Welcome to portfolio page.",
+            data : filteredProject
+        })
+
     })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
+
 
 });
 
@@ -143,5 +163,86 @@ router.delete("/delete/:id",isAuthenticated,(req,res)=>{
 
 });
 
+//Project List Route
+router.get("/projectList",(req,res)=>{
+
+    projectModel.find()
+    .then((projects)=>{
+
+        const filteredProject =   projects.map(project=>{
+            return {
+                id: project._id,
+                projectTitle : project.projectTitle,
+                projectCategory : project.projectCategory,
+                projectType : project.projectType,
+                projectToolsAndTechnology : project.projectToolsAndTechnology,
+                projectDescription : project.projectDescription,
+                projectImage : project.projectImage
+            }
+        });
+
+        res.render("projects/projectList",{
+            title: "Project List",
+            description : "Project List Page",
+            data : filteredProject
+        });
+
+    })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
+
+    
+});
+
+//Project Search Route
+router.post("/search",(req,res)=>
+{
+    projectModel.find({projectCategory: req.body.projectCategory})
+    .then((projects)=>{
+
+        const filteredProject =   projects.map(project=>{
+            return {
+                id: project._id,
+                projectTitle : project.projectTitle,
+                projectCategory : project.projectCategory,
+                projectType : project.projectType,
+                projectToolsAndTechnology : project.projectToolsAndTechnology,
+                projectDescription : project.projectDescription,
+                projectImage : project.projectImage
+            }
+        });
+
+        res.render("projects/projectList",{
+            title: "Project List",
+            description : "Project List Page",
+            data : filteredProject
+        });
+
+    })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
+    
+});
+
+//Project Details Route
+router.get("/details/:id",(req,res)=>
+{
+    projectModel.findById(req.params.id)
+    .then((project)=>{
+
+        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage} = project;
+        res.render("projects/projectDetails",{
+            title: "Project Details",
+            description: "Project Details Page",
+            _id,
+            projectTitle,
+            projectCategory,
+            projectType,
+            projectToolsAndTechnology,
+            projectDescription,
+            projectImage
+        })
+
+    })
+    .catch(err=>console.log(`Error occured while pulling data :${err}`));
+});
 
 module.exports = router;

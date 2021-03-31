@@ -1,1 +1,44 @@
-<h1 class="page-header">Welcome to portfolio page</h1>
+<section>
+    <h1 class="page-header">Welcome to portfolio page</h1>
+</section>
+ 
+<div class="search-area">
+    <form method="POST" action="/project/search" class="project-search-area">
+            <div>
+                <label for="category">Search Project by Category</label>
+            </div>
+
+            <select name="projectCategory" class="form-dropdown">
+                <option value="" selected>Please Select Project Category</option>
+                <option value="Illustration">Illustration</option>
+                <option value="Page Layout">Page Layout</option>
+                <option value="Self Directed">Self Directed</option>
+                <option value="Typography">Typography</option>
+                <option value="UI/UX">UI/UX</option>
+                <option value="Website Design">Website Design</option>
+            </select>
+        <div>
+            <input type="submit" value="Search" class="form-button">
+        </div>
+    </form>
+</div>
+
+<section class="project-list project-container">
+    <article class="row">
+    {{#each data }}
+        <header class="column">
+            <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}"></a>
+            <a href="/project/details/{{this.id}}">View More</a>   
+        </header>       
+    {{/each}}
+    </article>
+
+    {{#unless data}}
+    <div class="no-records">
+        <hr>
+        <h3>Project not available for this category</h3>
+        <p>Please try different category</p>
+        <hr>
+    </div>
+    {{/unless}} 
+</section>
