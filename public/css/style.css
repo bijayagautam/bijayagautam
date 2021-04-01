@@ -174,6 +174,29 @@ a{
     margin: 5em 0;
 }
 
+.project-details{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0.5em 0;
+    align-items: center;
+}
+
+.project-info{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.page-nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.project-header{
+    color: var(--portfolio-theme);
+    font-weight: 600;
+    font-size: 2.2rem;
+}
 /* Style for main content ends */
 
 
@@ -221,6 +244,24 @@ a{
         margin: auto;
     }
 
+    .about-project{
+        width: 50em;
+        margin: auto;
+    }
+
+    .project-label{
+        text-align: right;
+    }
+
+    .project-details{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        margin: 0.5em 0;
+        /* align-items: center; */
+        text-align: left;
+        grid-gap: 1em;
+    }
+
     .column{
         flex-basis: 33.33%;
     }
@@ -231,6 +272,11 @@ a{
         margin: 1em;
         align-items: center;
         grid-gap: 1.5em;
+    }
+
+    .page-nav{
+        grid-template-columns: 2fr 1fr;
+        margin: 0 7em;
     }
 }
 
@@ -264,9 +310,9 @@ a{
         padding-bottom: 1em;
     }
 
-    .page-sub-header{
+    /* .page-sub-header{
         margin: 0 14.7em;
-    }
+    } */
     
     .search-area{
         width: 50em;
@@ -282,7 +328,13 @@ a{
         flex-basis: 12.33%;
     }
 
-    .column img:hover{
+    .column .project-img:hover{
         filter: sepia(100%);
+    }
+
+    .page-nav{
+        grid-template-columns: 25em 20em;
+        /* margin: 0 7em; */
+        /* align-items: center; */
     }
 }

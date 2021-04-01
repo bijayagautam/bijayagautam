@@ -23,11 +23,11 @@
     </form>
 </div>
 
-<section class="project-list project-container">
+<section class="project-container">
     <article class="row">
     {{#each data }}
         <header class="column">
-            <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}"></a>
+            <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}" class="project-img"></a>
             <a href="/project/details/{{this.id}}">View More</a>   
         </header>       
     {{/each}}

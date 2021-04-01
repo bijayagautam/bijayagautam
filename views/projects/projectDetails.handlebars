@@ -1,12 +1,37 @@
-<section>
-    <h1 class="page-header">{{projectTitle}} Project Details</h1>
+<section class="about-project">
+    <div class="page-nav">
+        <h1 class="project-header">Project Details</h1>
+        <a href="/project/list" class="form-button">Back to Projects</a>   
+    </div>
+
+    <div class="project-details">
+        <h2 class="project-label">Project Title :</h2>
+        <p class="project-info">{{projectTitle}}</p>
+    </div>
+    <div class="project-details">
+        <h2 class="project-label">Project Category :</h2>
+        <p class="project-info">{{projectCategory}}</p>
+    </div>
+    <div class="project-details">
+        <h2 class="project-label">Project Type :</h2>
+        <p class="project-info">{{projectType}}</p>
+    </div>
+    <div class="project-details">
+        <h2 class="project-label">Project Tools and Technology :</h2>
+        <p class="project-info">{{projectToolsAndTechnology}}</p>
+    </div>
+    <div class="project-details">
+        <h2 class="project-label">Project Description :</h2>
+        <p class="project-info">{{projectDescription}}</p>
+    </div>
 </section>
 
-<section class="project-list project-container">
+<section class="project-container">
     <article class="row">
         <header class="column">
-            <a href="/project/details"><img src="/img/uploads/{{projectImage}}"></a>
-            <a href="/project/list">Back to Portfolio</a>   
+            <img src="/img/uploads/{{this.projectImage}}">
         </header>       
     </article>
 </section>
+
+
