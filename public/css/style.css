@@ -283,6 +283,26 @@ img:hover + .view-button, .view-button:hover {
 
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
+    .intro{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        grid-gap: 3em;
+        width: 50em;
+        margin: 0 auto;
+    }
+
+    .about-portfolio{
+        padding: 0 10em;
+        width: 28em;
+        margin: 0 auto;
+    }
+
+    .section-header{
+        text-align: center;
+        padding: 1em 0;
+    }
+
     .project-container{
         width: 50em;
         margin: auto;
@@ -351,13 +371,15 @@ img:hover + .view-button, .view-button:hover {
     .page-header{
         width: 25em;
         margin: auto;
-        padding-bottom: 1em;
     }
 
-    /* .page-sub-header{
-        margin: 0 14.7em;
-    } */
-    
+    .intro{
+        grid-template-columns: 22em 30em;
+        align-items: center;
+        grid-gap: 10em;
+        width: 60em;
+    }
+
     .search-area{
         width: 50em;
         margin: auto;
