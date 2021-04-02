@@ -136,6 +136,38 @@ a{
     border-radius: 0.3em;
 }
 
+.other-button{
+    margin: 1em 0;
+    background-color: var(--portfolio-text-accent-one);
+    color: var(--portfolio-theme-fg);
+    padding: 0.5em 0.8em;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.3em;
+}
+
+.view-button{
+    margin: 1em 0;
+    background-color: var(--portfolio-text-accent-one);
+    color: var(--portfolio-theme-fg);
+    padding: 0.5em 0.8em;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.3em;
+}
+
+.view-button {
+    display: none;
+}
+
+img:hover + .view-button, .view-button:hover {
+    display: inline;
+}
+
 .error-message{
     color: var(--portfolio-theme-accent);
     font-weight: 600;
@@ -197,6 +229,18 @@ a{
     font-weight: 600;
     font-size: 2.2rem;
 }
+
+.social-media{
+    display: grid;
+    grid-template-columns: 5em 5em;
+    align-items: left;
+    text-align: center;
+}
+
+.social-media img{
+    max-width: fit-content;
+}
+
 /* Style for main content ends */
 
 
