@@ -279,7 +279,12 @@ img:hover + .view-button, .view-button:hover {
 .column img{
     width: 100%;
     vertical-align: middle;
-  }
+}
+
+/* Style to toggle show and hide content */
+.show-hide{
+    display: none;
+}
 
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
