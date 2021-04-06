@@ -12,6 +12,20 @@
     --portfolio-main-font: 'Rajdhani', sans-serif;
 }
 
+.release-note{
+    color: var(--portfolio-theme-accent);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2em;
+}
+
+.sub-relase-note{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
 /* General style starts */
 body,h1,h2,h3,h4,h5,h6,p{
     padding: 0;
