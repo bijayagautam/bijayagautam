@@ -180,26 +180,6 @@ td{
     border-radius: 0.3em;
 }
 
-.view-button{
-    margin: 1em 0;
-    background-color: var(--portfolio-text-accent-one);
-    color: var(--portfolio-theme-fg);
-    padding: 0.5em 0.8em;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 0.3em;
-}
-
-.view-button {
-    display: none;
-}
-
-img:hover + .view-button, .view-button:hover {
-    display: inline;
-}
-
 .error-message{
     color: var(--portfolio-theme-accent);
     font-weight: 600;
@@ -255,7 +235,7 @@ img:hover + .view-button, .view-button:hover {
     display: grid;
     grid-template-columns: 18em 10em;
     align-items: center;
-    grid-gap: em;
+    grid-gap: 1em;
 }
 
 .crud-form{
@@ -277,6 +257,16 @@ img:hover + .view-button, .view-button:hover {
 
 .social-media img{
     max-width: fit-content;
+}
+
+iframe{
+    width:400px;
+    height:300px;
+}
+
+.frame-container{
+    margin: 0 auto;
+    width: 30em;
 }
 
 /* Style for main content ends */
@@ -395,6 +385,16 @@ img:hover + .view-button, .view-button:hover {
         margin: 0 7em;
         grid-gap: 4em;
     }
+
+    iframe{
+        width:500px;
+        height:400px;
+    }
+    
+    .frame-container{
+        margin: 0 auto;
+        width: 30em;
+    }
 }
 
 @media screen and (min-width: 65em) {
@@ -403,7 +403,7 @@ img:hover + .view-button, .view-button:hover {
         grid-template-areas:  "logo menu";  
         padding-left: 5em;
     }
-
+    
     .main-menu {
         text-align: center;
         display: flex;
@@ -444,7 +444,7 @@ img:hover + .view-button, .view-button:hover {
     }
 
     .column{
-        flex-basis: 12.33%;
+        flex-basis: 22.33%;
     }
 
     .column .project-img:hover{
@@ -456,5 +456,15 @@ img:hover + .view-button, .view-button:hover {
         grid-gap: 8em;
         /* margin: 0 7em; */
         /* align-items: center; */
+    }
+
+    iframe{
+        width:800px;
+        height:600px;
+    }
+
+    .frame-container{
+        margin: 0 auto;
+        width: 50em;
     }
 }

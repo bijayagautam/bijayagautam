@@ -20,7 +20,8 @@ router.get("/list",(req,res)=>{
                 projectType : project.projectType,
                 projectToolsAndTechnology : project.projectToolsAndTechnology,
                 projectDescription : project.projectDescription,
-                projectImage : project.projectImage
+                projectImage : project.projectImage,
+                projectLink: project.projectLink
             }
         });
 
@@ -55,7 +56,8 @@ router.post("/add",isAuthenticated,(req,res)=>
         projectType : req.body.projectType,
         projectToolsAndTechnology : req.body.projectToolsAndTechnology,
         projectDescription : req.body.projectDescription,
-        projectImage : req.body.projectImage
+        projectImage : req.body.projectImage,
+        projectLink: req.body.projectLink
     }
 
     const project =  new projectModel(newProject);
@@ -94,7 +96,8 @@ router.get("/dashboard",isAuthenticated,(req,res)=>{
                 projectType : project.projectType,
                 projectToolsAndTechnology : project.projectToolsAndTechnology,
                 projectDescription : project.projectDescription,
-                projectImage : project.projectImage
+                projectImage : project.projectImage,
+                projectLink: project.projectLink
             }
         });
 
@@ -114,7 +117,7 @@ router.get("/edit/:id",isAuthenticated,(req,res)=>{
     projectModel.findById(req.params.id)
     .then((project)=>{
 
-        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage} = project;
+        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage,projectLink} = project;
         res.render("projects/projectEdit",{
             title: "Project Edit Page",
             description: "Welcome to project edit page.",
@@ -124,7 +127,8 @@ router.get("/edit/:id",isAuthenticated,(req,res)=>{
             projectType,
             projectToolsAndTechnology,
             projectDescription,
-            projectImage
+            projectImage,
+            projectLink
         })
 
     })
@@ -140,7 +144,8 @@ router.put("/update/:id",isAuthenticated,(req,res)=>{
         projectType : req.body.projectType,
         projectToolsAndTechnology : req.body.projectToolsAndTechnology,
         projectDescription : req.body.projectDescription,
-        projectImage : req.body.projectImage
+        projectImage : req.body.projectImage,
+        projectLink: req.body.projectLink
     }
 
     projectModel.updateOne({_id:req.params.id},project)
@@ -177,7 +182,8 @@ router.get("/projectList",(req,res)=>{
                 projectType : project.projectType,
                 projectToolsAndTechnology : project.projectToolsAndTechnology,
                 projectDescription : project.projectDescription,
-                projectImage : project.projectImage
+                projectImage : project.projectImage,
+                projectLink: project.projectLink
             }
         });
 
@@ -207,7 +213,8 @@ router.post("/search",(req,res)=>
                 projectType : project.projectType,
                 projectToolsAndTechnology : project.projectToolsAndTechnology,
                 projectDescription : project.projectDescription,
-                projectImage : project.projectImage
+                projectImage : project.projectImage,
+                projectLink: project.projectLink
             }
         });
 
@@ -228,7 +235,7 @@ router.get("/details/:id",(req,res)=>
     projectModel.findById(req.params.id)
     .then((project)=>{
 
-        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage} = project;
+        const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage,projectLink} = project;
         res.render("projects/projectDetails",{
             title: "Project Details",
             description: "Project Details Page",
@@ -238,7 +245,8 @@ router.get("/details/:id",(req,res)=>
             projectType,
             projectToolsAndTechnology,
             projectDescription,
-            projectImage
+            projectImage,
+            projectLink
         })
 
     })

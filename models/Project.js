@@ -32,6 +32,10 @@ const projectSchema = new Schema({
     {
         type:String
     },
+    projectLink:
+    {
+        type:String
+    },
     dateCreated:
     {
         type:Date,
