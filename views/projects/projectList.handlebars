@@ -5,7 +5,7 @@
 <div class="search-area">
     <form method="POST" action="/project/search" class="project-search-area">
             <div>
-                <label for="category">Search Project by Category</label>
+                <label for="category">Filter Project by Category</label>
             </div>
 
             <select name="projectCategory" class="form-dropdown">
@@ -18,7 +18,7 @@
                 <option value="Website Design">Website Design</option>
             </select>
         <div>
-            <input type="submit" value="Search" class="form-button">
+            <input type="submit" value="Filter" class="form-button">
         </div>
     </form>
 </div>
@@ -27,7 +27,7 @@
     <article class="row">
     {{#each data }}
         <header class="column">
-            <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}" class="project-img"></a>
+            <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}" alt="Image of {{this.projectTitle}}" class="project-img"></a>
         </header>       
     {{/each}}
     </article>
@@ -36,7 +36,7 @@
     <div class="no-records">
         <hr>
         <h3>Project not available for this category</h3>
-        <p>Please try different category</p>
+        <p>Please select different category</p>
         <hr>
     </div>
     {{/unless}} 
