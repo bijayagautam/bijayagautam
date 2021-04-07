@@ -1,7 +1,9 @@
-<h1 class="dashoard-header">Welcome to Project Dashboard {{user.firstname}} {{user.lastname}} !</h1>
-<a href="/user/logout">Logout </a>
-
-<div class="crud-form">
+<section class="dashboard-details">
+    <div class="page-nav">
+        <h1 class="dashoard-header project-header">Welcome to Project Dashboard {{user.firstname}} {{user.lastname}} !</h1>
+        <a href="/user/logout" class="other-button">Logout </a>
+    </div>
+    <br><br>
     <article class="form">
         <div id="modifyProjectForm">
             <table class="project-info-table">
@@ -14,6 +16,7 @@
                         <th>Project Description</th>
                         <th>Project Image</th>
                         <th colspan="2">Operation</th>
+                        <hr>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,8 +41,11 @@
                 </tbody>
             </table>
         </div>
+        <br>
+        <hr>
+        <br>
         <div>
-            <a href="/project/add" class="panel-operation">Add a Project</a>
+            <a href="/project/add" class="other-button">Add a Project</a>
         </div>
     </article> 
-</div>
+</section>

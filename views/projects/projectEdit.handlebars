@@ -1,10 +1,13 @@
-<section>
-    <h1 class="page-header">Project Edit Form</h1>
+<section class="about-project">
+    <div class="page-nav">
+        <h1 class="page-header">Project Edit Form</h1>
+        <a href="/project/dashboard" class="other-button">Manage Project</a>  
+    </div>
 </section>
 
 <div class="crud-form">
     <article class="form">
-        <form method="POST" action="/project/update/{{_id}}?method=PUT" enctype="multipart/form-data" class="admin-entry-form">
+        <form method="POST" action="/project/update/{{_id}}?method=PUT" enctype="multipart/form-data" class="user-entry-form">
             <div id="createProjectForm">
                 <div class="form-box" >
                     <label for="title">Title</label>
@@ -43,8 +46,5 @@
                 </div>
             </div>  
         </form>
-        <div>
-            <a href="/project/dashboard" class="panel-operation">Manage Project</a>
-        </div>
     </article> 
 </div>

@@ -44,6 +44,15 @@ ul,li{
 a{
     text-decoration: none;
 }
+
+th{
+    padding: 0 2em 1.5em 1.5em;
+}
+
+td{
+    padding: 1em ;
+}
+
 /* General style ends */
 
 /* Style for header starts */
@@ -234,8 +243,13 @@ img:hover + .view-button, .view-button:hover {
 
 .page-nav{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 18em 10em;
     align-items: center;
+    grid-gap: em;
+}
+
+.crud-form{
+    padding-bottom: 2em;
 }
 
 .project-header{
@@ -332,6 +346,11 @@ img:hover + .view-button, .view-button:hover {
         margin: auto;
     }
 
+    .dashboard-details{
+        width: 80em;
+        margin: auto;
+    }
+
     .project-label{
         text-align: right;
     }
@@ -358,8 +377,9 @@ img:hover + .view-button, .view-button:hover {
     }
 
     .page-nav{
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 25em 10em;
         margin: 0 7em;
+        grid-gap: 4em;
     }
 }
 
@@ -374,7 +394,7 @@ img:hover + .view-button, .view-button:hover {
         text-align: center;
         display: flex;
         justify-content: center;
-        gap: 4em;
+        gap: 5em;
         margin-top: 5em;
     }
 
@@ -418,7 +438,8 @@ img:hover + .view-button, .view-button:hover {
     }
 
     .page-nav{
-        grid-template-columns: 25em 20em;
+        grid-template-columns: 30em 15em;
+        grid-gap: 8em;
         /* margin: 0 7em; */
         /* align-items: center; */
     }
