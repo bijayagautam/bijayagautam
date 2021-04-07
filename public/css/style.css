@@ -200,13 +200,14 @@ img:hover + .view-button, .view-button:hover {
 .form-note{
     color: var(--portfolio-theme-accent);
     text-align: center;
+    font-weight: 700;
 }
 
 .form-dropdown{
     width: 95%;
     padding: 0.8em;
     border-radius: 0.2em;
-    border: 0 solid;
+    border: 0.1em solid;
     padding-left: 1.5em;
     margin: 0.5em;
 }
