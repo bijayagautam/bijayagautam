@@ -306,6 +306,7 @@ iframe{
     flex-shrink: 0;
     flex-basis: 100%;
     padding: 0.5em;
+    align-self: center;
 }
 
 .column img{
@@ -368,8 +369,9 @@ iframe{
         grid-gap: 1em;
     }
 
-    .column{
-        flex-basis: 33.33%;
+        .column{
+        flex-basis: 40%;
+        align-self: center;
     }
 
     .project-search-area{
@@ -444,8 +446,9 @@ iframe{
         margin: auto;
     }
 
-    .column{
-        flex-basis: 22.33%;
+       .column{
+        flex-basis: 30.33%;
+        align-self: center;
     }
 
     .column .project-img:hover{
@@ -473,5 +476,11 @@ iframe{
 @media screen and (min-width: 85em) {
     .navbar {
         grid-gap: 20em;
+    }
+
+    .column{
+    flex-basis: 22.33%;
+    align-self: center;
+    padding-bottom: 2em;
     }
 }
