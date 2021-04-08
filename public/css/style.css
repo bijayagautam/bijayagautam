@@ -135,7 +135,7 @@ td{
 .user-entry-form{
     margin: 0 auto;
     max-width: 30em;
-    min-width: 20em;
+    min-width: 15em;
     padding: 1em;
     box-shadow: 0em 0.1em 0.2em var(--portfolio-text-accent-three);
     border-radius: 0.2em;
@@ -214,9 +214,10 @@ td{
 }
 
 .no-records{
-    text-align: center;
+    text-align: left;
     color: var(--portfolio-theme-accent);
     margin: 5em 0;
+    font-size: 0.7rem;
 }
 
 .project-details{
@@ -233,7 +234,7 @@ td{
 
 .page-nav{
     display: grid;
-    grid-template-columns: 18em 10em;
+    grid-template-columns: auto auto;
     align-items: center;
     grid-gap: 1em;
 }
@@ -310,7 +311,7 @@ iframe{
 }
 
 .column img{
-    width: 100%;
+    width: 70%;
     vertical-align: middle;
 }
 
@@ -369,9 +370,13 @@ iframe{
         grid-gap: 1em;
     }
 
-        .column{
+    .column{
         flex-basis: 40%;
         align-self: center;
+    }
+    
+    .column img{
+        width: 80%;
     }
 
     .project-search-area{
@@ -396,6 +401,11 @@ iframe{
     .frame-container{
         margin: 0 auto;
         width: 30em;
+    }
+
+    .no-records{
+        text-align: center;
+        font-size: 1rem;
     }
 }
 
@@ -446,9 +456,13 @@ iframe{
         margin: auto;
     }
 
-       .column{
+    .column{
         flex-basis: 30.33%;
         align-self: center;
+    }
+
+    .column img{
+        width: 90%;
     }
 
     .column .project-img:hover{
@@ -479,8 +493,13 @@ iframe{
     }
 
     .column{
-    flex-basis: 22.33%;
-    align-self: center;
-    padding-bottom: 2em;
+        flex-basis: 22.33%;
+        align-self: center;
+        padding-bottom: 2em;
     }
+
+    .column img{
+        width: 90%;
+    }
+
 }
