@@ -20,12 +20,6 @@
     margin: 2em;
 }
 
-.sub-relase-note{
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-}
-
 /* General style starts */
 * {
     padding: 0;
@@ -312,6 +306,7 @@ iframe{
     flex-basis: 100%;
     padding: 0.5em;
     align-self: center;
+    text-align: center;
 }
 
 .column img{
@@ -319,10 +314,22 @@ iframe{
     vertical-align: middle;
 }
 
+.skill{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--portfolio-text-accent-one);
+}
+
 /* Style to toggle show and hide content */
 .show-hide{
     display: none;
 }
+
+.project-skills:hover{
+    animation: move 10s;
+}
+
 
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
@@ -506,4 +513,16 @@ iframe{
         width: 90%;
     }
 
+}
+
+
+/* KEYFRAME ANIMATION STARTS HERE */
+@keyframes move {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
