@@ -54,7 +54,11 @@ th{
 }
 
 td{
-    padding: 1em ;
+    padding: 0.7em ;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow:ellipsis;
+    max-width: 9em;
 }
 
 /* General style ends */
