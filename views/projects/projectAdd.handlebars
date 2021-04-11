@@ -12,7 +12,10 @@
                 <div class="form-box" >
                     <label for="title">Title</label>
                     <input type="text" name="projectTitle" value="{{data.projectTitle}}"></li><br>
-                    
+                    {{#if messages.projectTitle}}
+                        <div class="error-message"> {{messages.projectTitle}} </div>
+                    {{/if}}
+
                     <label for="category">Category</label>
                     <select name="projectCategory" class="form-dropdown">
                         <option value="" selected>Please Select Project Category</option>
@@ -23,6 +26,9 @@
                         <option value="UI/UX">UI/UX</option>
                         <option value="Website Design">Website Design</option>
                     </select><br>
+                    {{#if messages.projectCategory}}
+                        <div class="error-message"> {{messages.projectCategory}} </div>
+                    {{/if}}
 
                     <label for="type">Type</label>
                     <select name="projectType" class="form-dropdown">
@@ -31,13 +37,22 @@
                         <option value="Professional Project">Professional Project</option>
                         <option value="Self Directed">Self Directed</option>
                     </select><br>
+                    {{#if messages.projectType}}
+                        <div class="error-message"> {{messages.projectType}} </div>
+                    {{/if}}
                     
                     <label for="toolsAndTechnology">Tools and Technology Used</label>
                     <input type="text" name="projectToolsAndTechnology" value="{{data.projectToolsAndTechnology}}"></li><br>
-                    
+                    {{#if messages.projectToolsAndTechnology}}
+                        <div class="error-message"> {{messages.projectToolsAndTechnology}} </div>
+                    {{/if}}
+
                     <label for="description">Project Description</label>
                     <input type="text" name="projectDescription" value="{{data.projectDescription}}"></li><br>
-                   
+                    {{#if messages.projectDescription}}
+                        <div class="error-message"> {{messages.projectDescription}} </div>
+                    {{/if}}
+
                     <label for="uploadImage">Upload Image</label>
                     <input type="file" id="myFile" name="projectImage" value="image">
 

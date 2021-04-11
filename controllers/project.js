@@ -50,36 +50,79 @@ router.get("/add",isAuthenticated,(req,res)=>{
 //When admin submit the add project form
 router.post("/add",isAuthenticated,(req,res)=>
 {
-    const newProject = {
-        projectTitle : req.body.projectTitle,
-        projectCategory : req.body.projectCategory,
-        projectType : req.body.projectType,
-        projectToolsAndTechnology : req.body.projectToolsAndTechnology,
-        projectDescription : req.body.projectDescription,
-        projectImage : req.body.projectImage,
-        projectLink: req.body.projectLink
+    const errors= {};
+    const {projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription} = req.body;
+
+
+    if((projectTitle=="") || (projectTitle== null))
+    {
+        errors.projectTitle="Please enter project title.";
     }
 
-    const project =  new projectModel(newProject);
-    project.save()
-    .then((project)=>{
+    if((projectCategory=="") || (projectCategory== null))
+    {
+        errors.projectCategory="Please select project category.";
+    }
 
-        req.files.projectImage.name = `project_${project._id}${path.parse(req.files.projectImage.name).ext}`;
-        
-        req.files.projectImage.mv(`public/img/uploads/${req.files.projectImage.name}`)
-        .then(()=>{
-            
-            projectModel.updateOne({_id:project._id},{
-                projectImage: req.files.projectImage.name
-            })
-            .then(()=>{
-                res.redirect("/project/dashboard")
-            })
-            
+    if((projectType=="") || (projectType== null))
+    {
+        errors.projectType="Please select project type.";
+    }
+
+    if((projectToolsAndTechnology=="") || (projectToolsAndTechnology== null))
+    {
+        errors.projectToolsAndTechnology="Please enter project tools and technology used.";
+    }
+
+    if((projectDescription=="") || (projectDescription== null))
+    {
+        errors.projectDescription="Please enter project description.";
+    }
+
+    if(Object.keys(errors).length > 0)
+    {
+        //Object.keys() method returns an array of a errors object's 
+        console.log(Object.keys(errors));
+        res.render("projects/projectAdd",{
+            title: "Project Add Page",
+            description: "Welcome to project add page.",
+            messages : errors,
+            data: {...req.body }
         })
-
-    })
-    .catch(err=>console.log(`Error occured while inserting data:${err}`));
+    }
+    else
+    {
+        const newProject = {
+            projectTitle : req.body.projectTitle,
+            projectCategory : req.body.projectCategory,
+            projectType : req.body.projectType,
+            projectToolsAndTechnology : req.body.projectToolsAndTechnology,
+            projectDescription : req.body.projectDescription,
+            projectImage : req.body.projectImage,
+            projectLink: req.body.projectLink
+        }
+    
+        const project =  new projectModel(newProject);
+        project.save()
+        .then((project)=>{
+    
+            req.files.projectImage.name = `project_${project._id}${path.parse(req.files.projectImage.name).ext}`;
+            
+            req.files.projectImage.mv(`public/img/uploads/${req.files.projectImage.name}`)
+            .then(()=>{
+                
+                projectModel.updateOne({_id:project._id},{
+                    projectImage: req.files.projectImage.name
+                })
+                .then(()=>{
+                    res.redirect("/project/dashboard")
+                })
+                
+            })
+    
+        })
+        .catch(err=>console.log(`Error occured while inserting data:${err}`));
+    }
 });
 
 //Project Dashboard Route
