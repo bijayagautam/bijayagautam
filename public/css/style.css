@@ -355,7 +355,7 @@ iframe{
 @media screen and (min-width: 50em) {
     .intro{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 18em 25em;
         align-items: center;
         grid-gap: 3em;
         width: 50em;
@@ -371,7 +371,7 @@ iframe{
     .section-header{
         text-align: center;
         font-size: 2rem;
-        padding: 2em 0 1em 0;
+        padding: 1em 0 1em 0;
     }
 
     .project-container{
