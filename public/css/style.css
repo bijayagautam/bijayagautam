@@ -123,7 +123,7 @@ i{
 
 .main-content{
     font-family: var(--portfolio-main-font);
-    margin: 1em 2em;
+    margin: 1em 3em;
     overflow: auto;
     padding-bottom: 100px;
 }
@@ -232,7 +232,6 @@ i{
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-    grid-gap: 1em;
 }
 
 .crud-form{
@@ -242,7 +241,11 @@ i{
 .project-header{
     color: var(--portfolio-theme);
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+
+.login-form-note{
+    text-align: center;
 }
 
 .social-media{
@@ -335,6 +338,7 @@ iframe{
     font-weight: 500;
     font-size: 1.3rem;
     color: var(--portfolio-text-accent-one);
+    padding-top: 0.7em;
 }
 
 /* Style to toggle show and hide content */
@@ -428,7 +432,7 @@ iframe{
     .page-nav{
         grid-template-columns: 25em 10em;
         margin: 0 7em;
-        grid-gap: 4em;
+        grid-gap: 3em;
     }
 
     iframe{
@@ -470,6 +474,7 @@ iframe{
     .logo {
         grid-area: logo;
         height : 12em;
+        max-width: 210px;
     }
 
     .page-header{
@@ -531,7 +536,7 @@ iframe{
 
     .page-nav{
         grid-template-columns: 30em 15em;
-        grid-gap: 8em;
+        grid-gap: 1em;
     }
 
     iframe{
@@ -568,6 +573,36 @@ iframe{
     .skill-column img{
         width: 90%;
     }
+
+    .project-header{
+        font-size: 3rem;
+    }
+
+    .intro{
+        grid-template-columns: 30em 30em;
+        align-items: center;
+        grid-gap: 15em;
+        width: 75em;
+    }
+
+    .page-header{
+        font-size: 3rem;
+    }
+
+    .page-sub-header{
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .section-details{
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    .section-header{
+        font-size: 2.6rem;
+    }
+    
 
 }
 
