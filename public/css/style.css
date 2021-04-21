@@ -123,7 +123,7 @@ i{
 
 .main-content{
     font-family: var(--portfolio-main-font);
-    margin: 1em 3em;
+    margin: 1em;
     overflow: auto;
     padding-bottom: 100px;
 }
@@ -292,8 +292,8 @@ iframe{
 
 
 .project-container{
-    width: 25em;
     margin: auto;
+    text-align: center;
 }
 
 .row{
@@ -326,7 +326,6 @@ iframe{
     flex-basis: 100%;
     padding: 0.5em;
     align-content: center;
-    min-width: 20em;
 }
 
 .skill-column img{
