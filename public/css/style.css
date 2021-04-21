@@ -8,6 +8,7 @@
     --portfolio-text-accent-one: #0e1111;
     --portfolio-text-accent-two: #787a76;
     --portfolio-text-accent-three: #615551;
+    --portfolio-text-accent-four: #e4f5fa;
     
     --portfolio-main-font: 'Rajdhani', sans-serif;
 }
@@ -359,12 +360,14 @@ iframe{
         grid-gap: 3em;
         width: 50em;
         margin: 0 auto;
+        padding-bottom: 1.5em;
     }
 
     .about-portfolio{
-        padding: 0 10em;
+        padding: 1em 8em 4em;
         width: 28em;
         margin: 0 auto;
+        background-color: var(--portfolio-text-accent-four);
     }
 
     .section-header{
@@ -487,6 +490,7 @@ iframe{
         align-items: center;
         grid-gap: 10em;
         width: 60em;
+        padding-bottom: 1.5em;
     }
 
     .search-area{
