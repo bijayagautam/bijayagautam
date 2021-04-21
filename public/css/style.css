@@ -350,6 +350,11 @@ iframe{
     animation: move 10s;
 }
 
+.section-details{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
 
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
