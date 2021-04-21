@@ -355,6 +355,17 @@ iframe{
     font-weight: 500;
 }
 
+.section-header{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.about-portfolio{
+    padding: 1.5em;
+    margin: 0 auto;
+    background-color: var(--portfolio-text-accent-four);
+}
+
 
 /* Media Query Starts Here--- */
 @media screen and (min-width: 50em) {
@@ -372,7 +383,6 @@ iframe{
         padding: 1em 8em 4em;
         width: 28em;
         margin: 0 auto;
-        background-color: var(--portfolio-text-accent-four);
     }
 
     .section-header{
