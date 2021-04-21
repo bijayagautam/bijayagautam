@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/",(req,res)=>{
 
     res.render("general/home",{
-        title: "Home Page",
+        title: "Bijaya Gautam | Home Page",
         description: "Welcome to home page."
     })
 
@@ -16,7 +16,7 @@ router.get("/",(req,res)=>{
 router.get("/contact",(req,res)=>{
 
     res.render("general/contact",{
-        title: "Contact Page",
+        title: "Bijaya Gautam | Contact Page",
         description: "Welcome to contact page."
     })
 

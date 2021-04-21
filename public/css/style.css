@@ -220,7 +220,7 @@ i{
     display: grid;
     grid-template-columns: auto;
     margin: 0.5em 0;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .project-info{

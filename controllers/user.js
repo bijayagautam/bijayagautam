@@ -7,7 +7,7 @@ const bcrypt = require("bcryptjs");
 //Setting up routes
 router.get("/login",(req,res)=>{
     res.render("user/login",{
-        title: "Login",
+        title: "Bijaya Gautam | Login",
         description : "User login Page"
     })
 });
@@ -32,7 +32,7 @@ router.post("/login",(req,res)=>
         //Object.keys() method returns an array of a errors object's 
         console.log(Object.keys(errors));
         res.render("user/login",{
-            title: "Login",
+            title: "Bijaya Gautam | Login",
             description : "User login Page",
             messages : errors,
             data: {...req.body }

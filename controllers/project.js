@@ -26,7 +26,7 @@ router.get("/list",(req,res)=>{
         });
 
         res.render("projects/projectList",{
-            title: "Portfolio Page",
+            title: "Bijaya Gautam | Portfolio Page",
             description: "Welcome to portfolio page.",
             data : filteredProject
         })
@@ -41,7 +41,7 @@ router.get("/list",(req,res)=>{
 router.get("/add",isAuthenticated,(req,res)=>{
 
     res.render("projects/projectAdd",{
-        title: "Project Add Page",
+        title: "Bijaya Gautam | Project Add Page",
         description: "Welcome to project add page."
     })
 
@@ -84,7 +84,7 @@ router.post("/add",isAuthenticated,(req,res)=>
         //Object.keys() method returns an array of a errors object's 
         console.log(Object.keys(errors));
         res.render("projects/projectAdd",{
-            title: "Project Add Page",
+            title: "Bijaya Gautam | Project Add Page",
             description: "Welcome to project add page.",
             messages : errors,
             data: {...req.body }
@@ -145,7 +145,7 @@ router.get("/dashboard",isAuthenticated,(req,res)=>{
         });
 
         res.render("projects/projectDashboard",{
-            title: "Project Dashboard Page",
+            title: "Bijaya Gautam | Project Dashboard Page",
             description: "Welcome to project dashboard page.",
             data : filteredProject
         })
@@ -162,7 +162,7 @@ router.get("/edit/:id",isAuthenticated,(req,res)=>{
 
         const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage,projectLink} = project;
         res.render("projects/projectEdit",{
-            title: "Project Edit Page",
+            title: "Bijaya Gautam | Project Edit Page",
             description: "Welcome to project edit page.",
             _id,
             projectTitle,
@@ -231,7 +231,7 @@ router.get("/projectList",(req,res)=>{
         });
 
         res.render("projects/projectList",{
-            title: "Project List",
+            title: "Bijaya Gautam | Project List",
             description : "Project List Page",
             data : filteredProject
         });
@@ -262,7 +262,7 @@ router.post("/search",(req,res)=>
         });
 
         res.render("projects/projectList",{
-            title: "Project List",
+            title: "Bijaya Gautam | Project List",
             description : "Project List Page",
             data : filteredProject
         });
@@ -280,7 +280,7 @@ router.get("/details/:id",(req,res)=>
 
         const {_id,projectTitle,projectCategory,projectType,projectToolsAndTechnology,projectDescription,projectImage,projectLink} = project;
         res.render("projects/projectDetails",{
-            title: "Project Details",
+            title: "Bijaya Gautam | Project Details",
             description: "Project Details Page",
             _id,
             projectTitle,
