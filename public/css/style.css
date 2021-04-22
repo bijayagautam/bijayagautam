@@ -86,6 +86,8 @@ i{
 
 .main-menu{
     grid-area: menu;
+    animation: slowDrop 500ms ease-in forwards;
+    transform-origin: top center;
 }
 
 .main-menu a {
@@ -660,3 +662,14 @@ iframe{
     }
 }
 
+@keyframes slowDrop {
+    0% {
+      transform: scaleY(0)
+    }
+    80% {
+      transform: scaleY(1.1)
+    }
+    100% {
+      transform: scaleY(1)
+    }
+  }
