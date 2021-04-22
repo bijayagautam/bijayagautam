@@ -1,54 +1,50 @@
 <section class="about-project">
-    <div class="page-nav">
+    <aside class="page-nav">
         <h1 class="page-header">Project Edit Form</h1>
         <a href="/project/dashboard" class="other-button">Manage Project</a>  
-    </div>
+    </aside>
 </section>
 
-<div class="crud-form">
-    <article class="form">
-        <form method="POST" action="/project/update/{{_id}}?method=PUT" enctype="multipart/form-data" class="user-entry-form">
-            <div id="createProjectForm">
-                <div class="form-box" >
-                    <label for="title">Title</label>
-                    <input type="text" name="projectTitle" value="{{projectTitle}}"></li><br>
-                    
-                    <label for="category">Category</label>
-                    <select name="projectCategory" class="form-dropdown">
-                        <option value="" selected>Please Select Project Category</option>
-                        <option value="Illustration">Illustration</option>
-                        <option value="Page Layout">Page Layout</option>
-                        <option value="Self Directed">Self Directed</option>
-                        <option value="Typography">Typography</option>
-                        <option value="UI/UX">UI/UX</option>
-                        <option value="Website Design">Website Design</option>
-                    </select><br>
+<section class="form">
+    <form method="POST" action="/project/update/{{_id}}?method=PUT" enctype="multipart/form-data" class="user-entry-form">
+        <article class="form-box" >
+            <label for="title">Title</label>
+            <input type="text" name="projectTitle" value="{{projectTitle}}"></li><br>
+            
+            <label for="category">Category</label>
+            <select name="projectCategory" class="form-dropdown">
+                <option value="" selected>Please Select Project Category</option>
+                <option value="Illustration">Illustration</option>
+                <option value="Page Layout">Page Layout</option>
+                <option value="Self Directed">Self Directed</option>
+                <option value="Typography">Typography</option>
+                <option value="UI/UX">UI/UX</option>
+                <option value="Website Design">Website Design</option>
+            </select><br>
 
-                    <label for="type">Type</label>
-                    <select name="projectType" class="form-dropdown">
-                        <option value="" selected>Please Select Project Type</option>
-                        <option value="School Project">School Project</option>
-                        <option value="Professional Project">Professional Project</option>
-                        <option value="Self Directed Project">Self Directed</option>
-                    </select><br>
-                    
-                    <label for="toolsAndTechnology">Tools and Technology Used</label>
-                    <input type="text" name="projectToolsAndTechnology" value="{{projectToolsAndTechnology}}"></li><br>
-                    
-                    <label for="description">Project Description</label>
-                    <input type="text" name="projectDescription" value="{{projectDescription}}"></li><br>
-                   
-                    <label for="uploadImage">Upload Image</label>
-                    <input type="file" id="myFile" name="projectImage" value="{{projectImage}}">
+            <label for="type">Type</label>
+            <select name="projectType" class="form-dropdown">
+                <option value="" selected>Please Select Project Type</option>
+                <option value="School Project">School Project</option>
+                <option value="Professional Project">Professional Project</option>
+                <option value="Self Directed Project">Self Directed</option>
+            </select><br>
+            
+            <label for="toolsAndTechnology">Tools and Technology Used</label>
+            <input type="text" name="projectToolsAndTechnology" value="{{projectToolsAndTechnology}}"></li><br>
+            
+            <label for="description">Project Description</label>
+            <input type="text" name="projectDescription" value="{{projectDescription}}"></li><br>
+            
+            <label for="uploadImage">Upload Image</label>
+            <input type="file" id="myFile" name="projectImage" value="{{projectImage}}">
 
-                    <label for="link">External Link</label>
-                    <input type="text" name="projectLink" value="{{projectLink}}"></li><br>
+            <label for="link">External Link</label>
+            <input type="text" name="projectLink" value="{{projectLink}}"></li><br>
 
-                </div>
-                <div>
-                    <input type="submit" value="Update Project" class="form-button">
-                </div>
-            </div>  
-        </form>
-    </article> 
-</div>
+        </article>
+        <aside>
+            <input type="submit" value="Update Project" class="form-button">
+        </aside>
+    </form>
+</section> 

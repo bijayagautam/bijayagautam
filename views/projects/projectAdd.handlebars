@@ -1,70 +1,66 @@
 <section class="about-project">
-    <div class="page-nav">
+    <aside class="page-nav">
         <h1 class="page-header">Project Detail Form</h1>
         <a href="/project/dashboard" class="other-button">Manage Project</a>  
-    </div>
+    </aside>
 </section>
 
-<div class="crud-form">
-    <article class="form">
-        <form method="POST" action="/project/add" enctype="multipart/form-data" class="user-entry-form">
-            <div id="createProjectForm">
-                <div class="form-box" >
-                    <label for="title">Title</label>
-                    <input type="text" name="projectTitle" value="{{data.projectTitle}}"></li><br>
-                    {{#if messages.projectTitle}}
-                        <div class="error-message"> {{messages.projectTitle}} </div>
-                    {{/if}}
+<section class="form">
+    <form method="POST" action="/project/add" enctype="multipart/form-data" class="user-entry-form">
+        <article class="form-box" >
+            <label for="title">Title</label>
+            <input type="text" name="projectTitle" value="{{data.projectTitle}}"></li><br>
+            {{#if messages.projectTitle}}
+                <div class="error-message"> {{messages.projectTitle}} </div>
+            {{/if}}
 
-                    <label for="category">Category</label>
-                    <select name="projectCategory" class="form-dropdown">
-                        <option value="" selected>Please Select Project Category</option>
-                        <option value="Illustration">Illustration</option>
-                        <option value="Page Layout">Page Layout</option>
-                        <option value="Self Directed">Self Directed</option>
-                        <option value="Typography">Typography</option>
-                        <option value="UI/UX">UI/UX</option>
-                        <option value="Website Design">Website Design</option>
-                    </select><br>
-                    {{#if messages.projectCategory}}
-                        <div class="error-message"> {{messages.projectCategory}} </div>
-                    {{/if}}
+            <label for="category">Category</label>
+            <select name="projectCategory" class="form-dropdown">
+                <option value="" selected>Please Select Project Category</option>
+                <option value="Illustration">Illustration</option>
+                <option value="Page Layout">Page Layout</option>
+                <option value="Self Directed">Self Directed</option>
+                <option value="Typography">Typography</option>
+                <option value="UI/UX">UI/UX</option>
+                <option value="Website Design">Website Design</option>
+            </select><br>
+            {{#if messages.projectCategory}}
+                <div class="error-message"> {{messages.projectCategory}} </div>
+            {{/if}}
 
-                    <label for="type">Type</label>
-                    <select name="projectType" class="form-dropdown">
-                        <option value="" selected>Please Select Project Type</option>
-                        <option value="School Project">School Project</option>
-                        <option value="Professional Project">Professional Project</option>
-                        <option value="Self Directed">Self Directed</option>
-                    </select><br>
-                    {{#if messages.projectType}}
-                        <div class="error-message"> {{messages.projectType}} </div>
-                    {{/if}}
-                    
-                    <label for="toolsAndTechnology">Tools and Technology Used</label>
-                    <input type="text" name="projectToolsAndTechnology" value="{{data.projectToolsAndTechnology}}"></li><br>
-                    {{#if messages.projectToolsAndTechnology}}
-                        <div class="error-message"> {{messages.projectToolsAndTechnology}} </div>
-                    {{/if}}
+            <label for="type">Type</label>
+            <select name="projectType" class="form-dropdown">
+                <option value="" selected>Please Select Project Type</option>
+                <option value="School Project">School Project</option>
+                <option value="Professional Project">Professional Project</option>
+                <option value="Self Directed">Self Directed</option>
+            </select><br>
+            {{#if messages.projectType}}
+                <div class="error-message"> {{messages.projectType}} </div>
+            {{/if}}
+            
+            <label for="toolsAndTechnology">Tools and Technology Used</label>
+            <input type="text" name="projectToolsAndTechnology" value="{{data.projectToolsAndTechnology}}"></li><br>
+            {{#if messages.projectToolsAndTechnology}}
+                <div class="error-message"> {{messages.projectToolsAndTechnology}} </div>
+            {{/if}}
 
-                    <label for="description">Project Description</label>
-                    <input type="text" name="projectDescription" value="{{data.projectDescription}}"></li><br>
-                    {{#if messages.projectDescription}}
-                        <div class="error-message"> {{messages.projectDescription}} </div>
-                    {{/if}}
+            <label for="description">Project Description</label>
+            <input type="text" name="projectDescription" value="{{data.projectDescription}}"></li><br>
+            {{#if messages.projectDescription}}
+                <div class="error-message"> {{messages.projectDescription}} </div>
+            {{/if}}
 
-                    <label for="uploadImage">Upload Image</label>
-                    <input type="file" id="myFile" name="projectImage" value="image">
+            <label for="uploadImage">Upload Image</label>
+            <input type="file" id="myFile" name="projectImage" value="image">
 
-                    <label for="link">External Link</label>
-                    <input type="text" name="projectLink" value="{{data.projectLink}}"></li><br>
-                   
-                </div>
-                <div>
-                    <input type="submit" value="Add Project" class="form-button">
-                </div>
-            </div> 
-        </form>
-    </article> 
-</div>
+            <label for="link">External Link</label>
+            <input type="text" name="projectLink" value="{{data.projectLink}}"></li><br>
+            
+        </article>
+        <aside>
+            <input type="submit" value="Add Project" class="form-button">
+        </aside>
+    </form>
+</section> 
 

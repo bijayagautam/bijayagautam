@@ -2,42 +2,42 @@
     <h1 class="page-header">Latest Projects</h1>
 </section>
  
-<div class="search-area">
+<section class="search-area">
     <form method="POST" action="/project/search" class="project-search-area">
-            <div>
-                <label for="category">Filter Project by Category</label>
-            </div>
+        <aside>
+            <label for="category">Filter Project by Category</label>
+        </aside>
 
-            <select name="projectCategory" class="form-dropdown">
-                <option value="" selected>Please Select Project Category</option>
-                <option value="Illustration">Illustration</option>
-                <option value="Page Layout">Page Layout</option>
-                <option value="Self Directed">Self Directed</option>
-                <option value="Typography">Typography</option>
-                <option value="UI/UX">UI/UX</option>
-                <option value="Website Design">Website Design</option>
-            </select>
-        <div>
+        <select name="projectCategory" class="form-dropdown">
+            <option value="" selected>Please Select Project Category</option>
+            <option value="Illustration">Illustration</option>
+            <option value="Page Layout">Page Layout</option>
+            <option value="Self Directed">Self Directed</option>
+            <option value="Typography">Typography</option>
+            <option value="UI/UX">UI/UX</option>
+            <option value="Website Design">Website Design</option>
+        </select>
+        <aside>
             <input type="submit" value="Filter" class="form-button">
-        </div>
+        </aside>
     </form>
-</div>
-<br>
+</section>
+<wbr>
 <section class="project-container">
     <article class="row">
     {{#each data }}
-        <header class="column">
+        <figure class="column">
             <a href="/project/details/{{this.id}}"><img src="/img/uploads/{{this.projectImage}}" alt="Graphic image of {{this.projectTitle}}" class="project-img"></a>
-        </header>       
+        </figure>       
     {{/each}}
     </article>
 
     {{#unless data}}
-    <div class="no-records">
+    <aside class="no-records">
         <hr>
         <h3>Project not available for this category</h3>
         <p>Please select different category</p>
         <hr>
-    </div>
+    </aside>
     {{/unless}} 
 </section>

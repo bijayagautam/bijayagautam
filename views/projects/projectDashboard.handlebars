@@ -1,53 +1,52 @@
 <section class="dashboard-details">
-    <div class="page-nav">
+    <aside class="page-nav">
         <h1 class="project-header">Welcome to Project Dashboard {{user.firstname}} {{user.lastname}} !</h1>
         <a href="/user/logout" class="other-button">Logout </a>
-    </div>
-    <br><br>
+    </aside>
+    <wbr><wbr>
     <article class="form">
-        <div id="modifyProjectForm">
-            <table class="project-info-table">
-                <thead>
-                    <tr>
-                        <th>Project Title</th>
-                        <th>Project Category</th>
-                        <th>Project Type</th>
-                        <th>Project Tools And Technology</th>
-                        <th>Project Description</th>
-                        <th>Project Image</th>
-                        <th>External Link</th>
-                        <th colspan="2">Operation</th>
-                        <hr>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each data}}
-                    <tr>
-                        <td>{{this.projectTitle}}</td>
-                        <td>{{this.projectCategory}}</td>
-                        <td>{{this.projectType}}</td>
-                        <td>{{this.projectToolsAndTechnology}}</td>
-                        <td>{{this.projectDescription}}</td>
-                        <td>{{this.projectImage}}</td>
-                        <td>{{this.projectLink}}</td>
-                        <td><a href="/project/edit/{{this.id}}" class="form-button">Edit</a></td>
-                        <td><a href="/project/delete/{{this.id}}?method=DELETE" class="form-button">Delete</a></td>
-                    </tr>
+        <table class="project-info-table">
+            <thead>
+                <tr>
+                    <th>Project Title</th>
+                    <th>Project Category</th>
+                    <th>Project Type</th>
+                    <th>Project Tools And Technology</th>
+                    <th>Project Description</th>
+                    <th>Project Image</th>
+                    <th>External Link</th>
+                    <th colspan="2">Operation</th>
+                    <hr>
+                </tr>
+            </thead>
 
-                    {{else}}
-                    <td colspan="9">
-                        <p>No Records in Database</p>
-                    </td>
-                    {{/each}}
-                    
-                </tbody>
-            </table>
-        </div>
-        <br>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.projectTitle}}</td>
+                    <td>{{this.projectCategory}}</td>
+                    <td>{{this.projectType}}</td>
+                    <td>{{this.projectToolsAndTechnology}}</td>
+                    <td>{{this.projectDescription}}</td>
+                    <td>{{this.projectImage}}</td>
+                    <td>{{this.projectLink}}</td>
+                    <td><a href="/project/edit/{{this.id}}" class="form-button">Edit</a></td>
+                    <td><a href="/project/delete/{{this.id}}?method=DELETE" class="form-button">Delete</a></td>
+                </tr>
+
+                {{else}}
+                <td colspan="9">
+                    <p>No Records in Database</p>
+                </td>
+                {{/each}}
+            </tbody>
+            
+        </table>
+        <wbr>
         <hr>
-        <br>
-        <div>
+        <wbr>
+        <aside>
             <a href="/project/add" class="other-button">Add a Project</a>
-        </div>
+        </aside>
     </article> 
 </section>
