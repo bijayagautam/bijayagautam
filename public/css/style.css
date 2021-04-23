@@ -86,8 +86,6 @@ i{
 
 .main-menu{
     grid-area: menu;
-    animation: slowDrop 500ms ease-in forwards;
-    transform-origin: top center;
 }
 
 .main-menu a {
@@ -366,7 +364,7 @@ iframe{
 }
 
 
-/* Media Query Starts Here--- */
+/* Media Query Min Width Starts Here--- */
 @media screen and (min-width: 50em) {
     .intro{
         display: grid;
@@ -623,6 +621,13 @@ iframe{
 
 }
 
+/* Media Query Max Width Starts Here--- */
+@media screen and (max-width: 55em) {
+    .main-menu{
+        animation: slowDrop 500ms ease-in forwards;
+        transform-origin: top center;
+    }
+}
 
 /* KEYFRAME ANIMATION STARTS HERE */
 @keyframes move {
